@@ -1,0 +1,252 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap'); */
+
+*{
+    font-family: 'Source Code Pro', monospace !important;
+}
+
+/* app container */
+/* .ui.container{
+    width:100% !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding-left:4em !important;
+    padding-right:4em !important;
+} */
+
+.appContainer{
+    word-wrap: break-word;
+    padding-bottom:4em !important;
+    margin-top:3em !important;
+    /* color:white;
+    background-color:rgb(29, 29, 29);
+    padding-top:2%;
+    padding-bottom:10%;
+    padding-right:10%;
+    padding-left:10%;
+    margin-bottom:-10%;
+    min-width: 100vw !important;
+    min-height: 100vh !important;
+    word-wrap:break-word; */
+}
+
+body{
+    color:white;
+    background-color:rgb(29, 29, 29);
+}
+/* end */
+
+
+/* Enlarging checkboxes */
+.ui.checkbox{
+    line-height: 30px;
+    margin-right:40px;
+}
+
+.ui.checkbox .box::before, .ui.checkbox label::before{
+    width:30px;
+    height:30px;
+}
+
+.ui.checkbox .box::after, .ui.checkbox label::after{
+    width:30px;
+    height:30px;
+    font-size: 20px;
+}
+/* end */
+
+
+/* Todo display screen */
+.progressBar{
+    position:fixed !important;
+    bottom:-21px;
+    left:0px;
+    min-width:100vw;
+}
+
+.progressPercent{
+    /* color:black; */
+    position:fixed !important;
+    bottom:-12px;
+    left:0px;
+    width:100vw;
+    z-index:1;
+    /* text-shadow: -1px 0px 5px black,1px 0px 5px gray,0px 1px 5px black,0px -1px 5px gray; */
+    text-shadow: 0px 0px 6px black;
+}
+
+.todoTitle{
+    font-size: 3rem;
+    margin-bottom:30px;
+    font-weight: 900;
+    /* font-family: 'Bebas Neue', cursive !important; */
+    font-family: 'Share', cursive !important;
+    font-stretch:extra-expanded;
+}
+
+td{
+    padding : 25px 0px 15px 5px;
+    /* padding-top:35px; */
+    /* border-bottom: 1px solid gray; */
+}
+
+tr{
+    word-break: break-all;
+}
+/* end */
+
+
+/* Edit screen */
+
+.textArea{
+    width:60vw !important;
+    margin-top:1% !important;
+    margin-bottom:2em !important;
+    background-color: transparent !important;
+    color:white !important;
+    border:1px solid transparent !important;
+    font-size: 25px !important;
+    font-family: 'Source Code Pro', monospace !important;
+    /* box-shadow: -5px -5px 15px 0px rgb(45, 45, 45),5px 5px 15px 0px rgb(13, 13, 13) !important; */
+    box-shadow: -5px -5px 8px 0px rgb(49, 49, 49),5px 5px 12px 0px rgb(9, 9, 9) !important;
+
+    transition: color .2s ease,border-color .2s ease,box-shadow .2s ease !important;
+    transition-property: color, border-color,border-width,box-shadow !important;
+    transition-duration: 0.3s, 0.3s !important;
+    transition-timing-function: ease, ease !important;
+    transition-delay: 0s, 0s !important;
+}
+
+.textArea:focus{
+    outline:0px !important;
+    border-bottom:2px solid teal !important;
+    box-shadow: -5px -5px 8px 0px rgb(49, 49, 49),5px 5px 12px 0px rgb(9, 9, 9) !important;
+    /* box-shadow: -5px -5px 8px 0px rgb(49, 49, 49),5px 5px 12px 0px rgb(9, 9, 9),-2px -2px 4px 0px teal,2px 2px 4px 0px teal !important; */
+}
+
+#todoName{
+    font-size: 20px !important;
+    color:white !important;
+    background-color: transparent !important;
+    box-shadow: inset -3px -3px 5px 0px rgb(45, 45, 45), inset 3px 3px 5px 0px rgb(13, 13, 13) !important;
+    margin-bottom: 2em !important;
+    border: 1px solid transparent !important;
+
+    transition: color .2s ease,box-shadow .2s ease,border-bottom .2s ease !important;
+    transition-property: color,box-shadow,border-bottom !important;
+    transition-duration: 0.2s, 0.2s !important;
+    transition-timing-function: ease, ease,ease !important;
+    transition-delay: 0s, 0s !important;
+}
+
+#todoName:focus{
+    transition: box-shadow .3s ease,border-bottom .3s ease !important;
+    transition-property: box-shadow,border-bottom !important;
+    transition-duration: 0.2s, 0.2s !important;
+    transition-timing-function: ease, ease, ease!important;
+    transition-delay: 0s, 0s !important;
+    border-bottom:1px solid teal !important;
+}
+
+#editCreateButton{
+    /* width:2em; */
+    padding:15px;
+}
+/* end */
+
+/* Dashboard */
+.ui.cards{
+    max-width:90%;
+    /* background : none !important; */
+    /* padding-right: 60px !important; */
+    /* padding-left: 60px !important; */
+}
+
+.ui.centered.card > .header{
+    padding-bottom:2em;
+    width:inherit !important;
+    height:200px;
+    overflow: hidden;
+    max-width: 120%;
+}
+
+.ui.centered.card{
+    background-color:teal;
+    /* background-color:#6dffff; */
+    box-shadow: 0px 0px transparent;
+    padding:0em 2em 0em 2em;
+    align-items: center;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+}
+
+.ui.centered.card:hover{
+    background: none !important;
+    background-color:teal !important;
+}
+
+.ui.centered.card:hover > .header {
+    color:black !important;
+}
+
+.ui.centered.card > .header > .ui.header{
+    color:white;
+    /* color: whitesmoke; */
+    font-family: 'Bebas Neue', cursive !important;
+    /* font-family: 'Staatliches', cursive !important; */
+    font-size: 90px;
+}
+
+.ui.centered.card > .content{
+    color:white !important; 
+}
+
+.createButton{
+    position: fixed;
+    bottom: 5%;
+    z-index: 6;
+    right: 5%;
+}
+
+/* end */
+
+
+/* back button */
+
+.backButton{
+    position:absolute;
+    top:2vh;
+    left:2%;
+    color:white !important;
+    background-color: transparent !important;
+}
+
+/* end */
+
+/* header */
+
+.AppHeader{
+    /* background-color: red; */
+    margin-top:-4vh;
+    margin-bottom:5vh;
+    padding-top:1%;
+    padding-bottom:1%;
+}
+
+.AppHeader > h1 {
+    font-size: 2em !important;
+    color:white !important;
+    font-family: 'Bebas Neue', cursive !important;
+    /* font-family: 'Source Code Pro', monospace !important; */
+    background-color: #00b5ad;
+    width:fit-content;
+    padding-top: 0.5% !important;
+    padding-bottom: 0.5% !important;
+    padding-left: 3% !important;
+    padding-right: 3% !important;
+}
+
+/* end */
