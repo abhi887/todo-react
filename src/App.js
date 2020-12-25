@@ -35,7 +35,7 @@ class App extends React.Component{
   }
 
   contextDash(e){    
-    if(this.state.todoName != "")
+    if(this.state.todoName !== "")
     {
       let todoCount = this.state.todoCount + 1;
       let todoList = this.state.todoList; 
@@ -85,25 +85,30 @@ class App extends React.Component{
   }
 
   _addEdit(e){
+    e.persist();
     let key = parseInt(this.state.count);
     let targetId = parseInt(e.target.id);
-    this.state.todos[targetId-1] = e.target.value;
-    if(e.target.id == key){
+    // this.state.todos[targetId-1] = e.target.value;
+    let tmpTodos = this.state.todos;
+    tmpTodos[targetId-1] = e.target.value;
+    if(parseInt(e.target.id) === key){
       this.setState(()=>({
         edits:[...this.state.edits,<Edit key={key+1} add={this._addEdit} id={key+1}/>],
         todo:[...this.state.todos,""],
-        count:key+1
+        count:key+1,
+        todos:[...tmpTodos],
       }));
     }
-    else if(e.target.id == key-1){
-      if(e.target.value == ""){
+    else if(parseInt(e.target.id) === key-1){
+      if(e.target.value === ""){
         let key = this.state.count;
         this.state.edits.pop();
         this.state.todos.pop();
         this.setState(()=>({
           edit:[...this.state.edits],
-          todos:[...this.state.todos],
-          count: key-1
+          // todos:[...this.state.todos],
+          todos:[...tmpTodos],
+          count: key-1,
         }))
       }
     }
@@ -116,11 +121,11 @@ class App extends React.Component{
         <Container className="appContainer" fluid={true}>
           <div className="AppHeader"><Header as="h1"><span role="img" aria-label="bullsEye Emoji">🎯</span> To-do App </Header></div>
           {[  
-              <Input type="text" onChange={this.setTodoName} id="todoName" placeholder="Todo title" required key="1"/>,
-              <br key="2"/>,
+              <Input type="text" onChange={this.setTodoName} id="todoName" placeholder="Todo title" required key="01"/>,
+              <br key="02"/>,
               ...this.state.edits,
-              <Button onClick={this.contextDash} color="teal" id="editCreateButton" key="3">Create Todo</Button>,
-              <Button onClick={this.setContextDash} floated="left" className="backButton" size="huge" key="4">
+              <Button onClick={this.contextDash} color="teal" id="editCreateButton" key="03">Create Todo</Button>,
+              <Button onClick={this.setContextDash} floated="left" className="backButton" size="huge" key="04">
                 <FontAwesomeIcon icon={faArrowLeft}/>
               </Button>
           ]}
