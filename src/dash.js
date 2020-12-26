@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button,Card,Header } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus,faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function Dash(props){
     const todoList = JSON.parse(localStorage.getItem("todoList"));
@@ -17,8 +17,10 @@ function Dash(props){
                         <Header as="h1" onClick={props.setDisplayTodo} data-todo={i}>{todo.title}</Header>
                     </Card.Header>
                     <Card.Content data-todo={i}>
-                            <h3 onClick={props.setDisplayTodo} data-todo={i} fluid id={i} inverted color="teal">{todo.state.filter((j)=>j).length}/{todo.state.length}</h3>
-                            <Button type="button" onClick={RemoveTodo} fluid floated="right" data-todo={i} id={i} inverted color="red">Delete</Button>
+                            <h3 onClick={props.setDisplayTodo} data-todo={i} fluid id={i} inverted={true} color="teal">{todo.state.filter((j)=>j).length}/{todo.state.length}</h3>
+                            <Button type="button" className="deleteButton" onClick={RemoveTodo} fluid={true} floated="right" size="huge" data-todo={i} id={i}>
+                                <FontAwesomeIcon icon={faTrash} onClick={RemoveTodo}/>
+                            </Button>
                     </Card.Content>
                 </Card>;
         });

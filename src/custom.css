@@ -250,3 +250,39 @@ tr{
 }
 
 /* end */
+
+/* delete button */
+
+.deleteButton{
+    position:absolute;
+    float:right !important;
+    width:fit-content !important;
+    margin-top: -17% !important;
+    margin-left:30% !important;
+    background-color: transparent !important;
+    color:whitesmoke !important;
+    text-shadow: 5px 5px 5px white !important;
+    transition: scale .3s ease,color .3 ease !important;
+    transition-property: scale,color !important;
+    transition-duration: 0.2s, 0.2s !important;
+    transition-timing-function: ease, ease, ease!important;
+}
+
+.deleteButton:hover{
+    scale:110%;
+    /* color:#e74949 !important; */
+    transition: scale .3s ease,color .3 ease !important;
+    transition-property: scale,color !important;
+    transition-duration: 0.2s, 0.2s !important;
+    transition-timing-function: ease, ease, ease!important;
+}
+
+.deleteButton > svg{
+    z-index: -1 !important;
+}
+
+.deleteButton :not(svg){
+    z-index: 3 !important;
+}
+
+/* end */

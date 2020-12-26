@@ -47,7 +47,11 @@ class App extends React.Component{
         todoCount:todoCount,
         todoList:todoList,
         todoName:"",
+        edits:[<Edit key="1" add={this._addEdit} id="1"/>],
+        count:1,
+        todos:[],
       }));
+      // console.log(`edits => ${this.state.edits}`);
     }
   }
 
