@@ -13,13 +13,13 @@ function Dash(props){
             // return([<button type="button" data-todo={i} onClick={props.setDisplayTodo} id={i}>{todo.title}</button>,<br/>]);
             // return([<Button type="button" data-todo={i} onClick={props.setDisplayTodo} id={i} inverted color="teal">{todo.title}</Button>,<br/>]);
             return <Card centered data-todo={i}>
-                    <Card.Header onClick={props.setDisplayTodo} data-todo={i}>
-                        <Header as="h1" onClick={props.setDisplayTodo} data-todo={i}>{todo.title}</Header>
+                    <Card.Header data-todo={i} onClick={props.setDisplayTodo}>
+                        <Header as="h1" data-todo={i}>{todo.title}</Header>
                     </Card.Header>
                     <Card.Content data-todo={i}>
-                            <h3 onClick={props.setDisplayTodo} data-todo={i} fluid id={i} inverted={true} color="teal">{todo.state.filter((j)=>j).length}/{todo.state.length}</h3>
-                            <Button type="button" className="deleteButton" onClick={RemoveTodo} fluid={true} floated="right" size="huge" data-todo={i} id={i}>
-                                <FontAwesomeIcon icon={faTrash} onClick={RemoveTodo}/>
+                            <h3 data-todo={i} fluid id={i} inverted={true} color="teal">{todo.state.filter((j)=>j).length}/{todo.state.length}</h3>
+                            <Button className="deleteButton" onClick={RemoveTodo} fluid={true} floated="right" size="huge" data-todo={i} id={i}>
+                                <FontAwesomeIcon icon={faTrash} data-todo={i}/>
                             </Button>
                     </Card.Content>
                 </Card>;
@@ -46,7 +46,8 @@ function Dash(props){
     }
 
     function RemoveTodo(e){
-        let todo = e.target.dataset.todo;
+        // console.log(e.target.parentElement.dataset.todo);
+        let todo = e.target.tagName==="path" ? e.target.parentElement.dataset.todo : e.target.dataset.todo ;
         localStorage.removeItem(todo);
         let todoList = JSON.parse(localStorage.getItem("todoList"));
         todoList=todoList.filter((i)=>i!==todo);

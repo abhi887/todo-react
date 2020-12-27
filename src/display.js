@@ -27,14 +27,14 @@ function Display(props){
     });
 
     return([
-        <h1 className="todoTitle">{(todo.title).toUpperCase()}</h1>,
-        <Divider inverted />,
-        <table><tbody>{[...formatted]}</tbody></table>,
-        <div>
+        <h1 className="todoTitle" key="01">{(todo.title).toUpperCase()}</h1>,
+        <Divider inverted="true" key="02"/>,
+        <table key="03"><tbody>{[...formatted]}</tbody></table>,
+        <div key="04">
             <h3 className="progressPercent">{Math.floor((checkCount/formatted.length)*100)}%</h3>
             <Progress percent={(checkCount/formatted.length)*100} indicating className="progressBar"/>
         </div>,
-        <Button key="3" onClick={props.setContextDash} floated="left" className="backButton" size="huge">
+        <Button key="05" onClick={props.setContextDash} floated="left" className="backButton" size="huge">
             <FontAwesomeIcon icon={faArrowLeft}/>
         </Button>
     ])
