@@ -21,16 +21,19 @@ class App extends React.Component{
 
     let todoCount = localStorage.getItem("todoList") != null ? JSON.parse(localStorage.getItem("todoList")).length : 0 ;
     let todoList = localStorage.getItem("todoList") != null ? JSON.parse(localStorage.getItem("todoList")) : [] ;
+    // console.log(`appState = ${localStorage.getItem("appState")}`);
+    let context = localStorage.getItem("appState") != null ? localStorage.getItem("appState") : "dash";
+    let lastViewedTodo = localStorage.getItem("lastViewedTodo") != null ? localStorage.getItem("lastViewedTodo") : "";
 
     this.state = {
       edits:[<Edit key="1" add={this._addEdit} id="1"/>],
       todos:[],
-      context:'dash',
+      context:context,
       count:1,
       todoName:"",
       todoCount: todoCount,
       todoList:todoList,
-      displayTodo:"",
+      displayTodo:lastViewedTodo,
     };
   }
 
@@ -51,7 +54,6 @@ class App extends React.Component{
         count:1,
         todos:[],
       }));
-      // console.log(`edits => ${this.state.edits}`);
     }
   }
 
@@ -65,7 +67,6 @@ class App extends React.Component{
 
   setDisplayTodo(e){
     e.persist();
-    console.log(`button for ${e.target.dataset.todo} clicked !`);
     this.contextDisplay(e);
     this.setState(()=>({displayTodo:e.target.dataset.todo}));
   }
@@ -83,9 +84,7 @@ class App extends React.Component{
   }
 
   setContextDash(e){
-    this.setState(()=>({
-      context:"dash"
-    }));
+    this.setState(()=>({context:"dash"}));
   }
 
   _addEdit(e){
@@ -116,6 +115,11 @@ class App extends React.Component{
         }))
       }
     }
+  }
+
+  componentDidUpdate(){
+    localStorage.setItem("appState",this.state.context);
+    localStorage.setItem("lastViewedTodo",this.state.displayTodo);
   }
 
   render(){

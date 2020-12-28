@@ -209,6 +209,7 @@ tr{
     bottom: 5%;
     z-index: 6;
     right: 5%;
+    padding:22px 24px 22px 24px !important;
 }
 
 /* end */
