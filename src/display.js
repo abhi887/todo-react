@@ -4,9 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 function Display(props){
-    
+
+    console.log(`props = ${JSON.stringify(props)}`);
     const [,setState] = useState();
-    const todo = JSON.parse(localStorage.getItem(props.todo));
+    if(props.todo===""){
+        var todo = JSON.parse(localStorage.getItem(localStorage.getItem("lastViewedTodo")));
+    }
+    else{
+        todo = JSON.parse(localStorage.getItem(props.todo));
+    }
+
     const checkCount = (todo.state.filter(i=>i)).length
 
     let formatted = todo.items.map((i,index)=>{
