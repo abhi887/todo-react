@@ -1,6 +1,6 @@
 # todo-react
 ##### A simple and minimalistic react app for creating and keeping track of to-do lists
-##### check project live here - [Todo App](https://todolists.abhi887.vercel.app)
+##### check project live here - [Todo App](https://todolist.abhi887.vercel.app)
 
 `todo-react` uses semantic UI for styling UI and works without any back-end at all, using 
 browser localstorage for storage, app state and data persistence.
@@ -12,8 +12,8 @@ and is local to the browser of any particular device.
 like any native app from play store or microsoft app store.
 
 #### Downloads
-- [Android](https://github.com/abhi887/todo-react/releases/android/)
-- [Windows](https://github.com/abhi887/todo-react/releases/windows/)
+- [Android](https://github.com/abhi887/todo-react/raw/main/releases/android/Todo%20lists.apk)
+- [Windows](https://github.com/abhi887/todo-react/raw/main/releases/windows/)
 
 ## Running on localhost
 ### Prerequisites
