@@ -13,7 +13,8 @@ like any native app from play store or microsoft app store.
 
 #### Downloads
 - [Android](https://github.com/abhi887/todo-react/raw/main/releases/android/Todo%20lists.apk)
-- [Windows](https://github.com/abhi887/todo-react/raw/main/releases/windows/)
+- [Windows (Version >= 10.0.19041)](https://github.com/abhi887/todo-react/raw/main/releases/windows/Todo lists.msixbundle)
+- [Windows (Version below 10.0.19041, May 2020 Update)](https://github.com/abhi887/todo-react/raw/main/releases/windows/Todo lists.classic.appxbundle)
 
 ## Running on localhost
 ### Prerequisites
