@@ -1,6 +1,6 @@
 {
   "short_name": "Todo lists",
-  "name": "Todo Lists App",
+  "name": "Todo List app",
   "icons": [
       {
           "src": "/images/favicon.ico",
@@ -18,11 +18,11 @@
           "sizes": "512x512"
       }
   ],
-  "start_url": "https://todolist.abhi887.vercel.app/",
+  "start_url": "https://mytodolists.vercel.app/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
-  "url": "https://todolist.abhi887.vercel.app",
+  "url": "https://mytodolists.vercel.app",
   "lang": "",
   "screenshots": [],
   "orientation": "portrait"
